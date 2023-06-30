@@ -1,46 +1,52 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Projeto de Visualização de PDFs com React e TypeScript
 
-## Available Scripts
+Este  é  um  projeto  em  React  com  TypeScript  que  permite  fazer  o  upload  e  visualizar  arquivos  PDF  usando  a  biblioteca  react-pdf.
 
-In the project directory, you can run:
+## Pré-requisitos
 
-### `npm start`
+Antes  de  executar  o  projeto, verifique  se  você possui  os  seguintes  requisitos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-  Node.js  instalado  em  seu  sistema. 
+- npm (ou yarn) instalado  em  seu  sistema.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Como usar
 
-### `npm test`
+Siga  as  etapas  abaixo  para  usar  o  projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone este repositório em sua máquina local:
+`https://github.com/TelesAlan/PDFViewer.git`
+2. Navegue até o diretório do projeto:
+`cd PDFViewer`
+3.  Instale as dependências do projeto:
+`npm i` ou `yarn`  
+4.  Inicie o servidor de desenvolvimento:
+`npm start` ou `yarn start`
+5. Abra o navegador e acesse `http://localhost:3000` para ver o aplicativo em funcionamento.
+6. Clique no botão "Selecionar arquivo" para fazer o upload de um arquivo PDF. Após o upload bem-sucedido, o PDF será exibido no visualizador.
+7.  Para visualizar um novo PDF, basta repetir o passo 6 e selecionar outro arquivo.
 
-### `npm run build`
+## Implementação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O projeto utiliza a biblioteca `react-pdf` para renderizar e exibir os arquivos PDF. O componente principal é o `PDFReader`, localizado no arquivo `src/components/PDFReader/index.tsx`. Ele é responsável pelo visualizador de PDF, onde o arquivo selecionado é exibido. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Além disso, o componente `FileInput`, localizado no arquivo `src/components/FileInput/index.tsx`, desempenha um papel fundamental. Ele possui um estado `selectedFile` para armazenar o arquivo PDF selecionado pelo usuário. Quando o usuário faz o upload de um arquivo, o componente `FileInput` exibe o PDF usando o componente `PDFReader`. 
 
-### `npm run eject`
+Dessa forma, o componente `FileInput` é responsável por lidar com a seleção do arquivo e o componente `PDFReader` é responsável por renderizar e exibir o PDF selecionado. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Certifique-se de explorar e personalizar esses componentes de acordo com suas necessidades e requisitos do projeto.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Suporte
+Se você tiver algum problema ou dúvida, sinta-se à vontade para abrir uma **issue** neste repositório.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contribuição
+Contribuições são bem-vindas! Se você deseja melhorar este projeto, siga estas etapas:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Faça um fork deste repositório.
+2. Crie uma nova branch: "**git checkout -b minha-branch**".
+3. Faça suas modificações e commit: "**git commit -m 'Minhas alterações'**".
+4. Envie para o repositório remoto: "**git push origin minha-branch**".
+5. Abra uma **pull request** explicando suas alterações.
+## Licença
+Este projeto está licenciado sob a MIT License. Sinta-se livre para usá-lo da maneira que preferir.
