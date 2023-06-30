@@ -1,30 +1,106 @@
-:root{
-    --primary: #9261CB;
-    --medium: #ACACAC;
+:root {
+	--primary: #9261CB;
+	--medium: #ACACAC;
 }
-html, body {
+
+html,
+body {
 	height: 100vh;
-	font-family: 'Courier New', monospace;
-	text-rendering: optimizelegibility;
-	-webkit-font-smoothing: antialiased;
-	background-color: #F8F8F8!important;
+	font-family: 'Signika', sans-serif;
+	background-color: #F8F8F8 !important;
 	color: var(--primary);
-    -webkit-top-highlight-color: transparent;
 }
-p{ color: var(--medium) }
 
-::-webkit-scrollbar{width: 0.6vw; height: .6vh;}
-::-webkit-scrollbar-thumb{background: var(--primary);border-radius: 5px;}
-
-.PDFReader-container{
-    margin: auto;
+p {
+	color: var(--medium)
+}
+/***************
+* SCROLL BAR
+***************/
+::-webkit-scrollbar {
+	width: 0.6vw;
+	height: .6vh;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+	border-radius: 5px;
+}
+/***************
+* INPUT FILE
+***************/
+.drop-container {
+	position: relative;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px dashed #555;
+	color: #444;
+	cursor: pointer;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.drop-container:hover {
+	background: #eee;
+	border-color: #111;
+}
+.drop-container:hover .drop-title {
+	color: #222;
+}
+.drop-title {
+	color: #444;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	transition: color .2s ease-in-out;
+}
+input[type=file] {
+	width: 350px;
+	max-width: 100%;
+	color: #444;
+	padding: 5px;
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #555;
+}
+input[type=file]::file-selector-button {
+	margin-right: 20px;
+	border: none;
+	background: var(--primary);
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: #fff;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
+}
+input[type=file]::file-selector-button:hover {
+	background: var(--primary);
+}
+/***************
+* PDFREADER
+***************/
+.PDFReader-container {
+	margin: auto;
 	border-radius: 14px;
 	width: fit-content;
 	height: 75vh;
 	overflow-y: scroll;
+	border: 1px solid var(--medium);
 }
-
-.container{
-    padding: 15px;
-	header, section { text-align: center; margin-bottom: 15px;; }
+.container {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	max-width: 1024px;
+	margin: auto;
+	
+	header,
+	section {
+		text-align: center;
+		margin-bottom: 15px;
+		// margin: 0 auto 15px auto;
+	}
 }
